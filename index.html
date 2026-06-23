@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LION GENESIS MEME ECOSYSTEM — $LIONG | The King of Memes</title>
+<meta name="description" content="$LIONG — No es una meme coin. Es el despertar de un imperio digital con poder, inteligencia y propósito. Fuerza · Inteligencia · Lealtad.">
+
+<!-- ============ FUENTES & ICONOS ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ============================================================
+   VARIABLES & RESET
+   ============================================================ */
+:root{
+  --black:#000000;
+  --black-2:#0a0a0a;
+  --black-3:#101010;
+  --gold:#FFD700;
+  --gold-2:#D4AF37;
+  --gold-deep:#b8860b;
+  --white:#FFFFFF;
+  --white-soft:#F5F5F5;
+  --line:rgba(212,175,55,.22);
+  --grad-gold:linear-gradient(135deg,#FFD700 0%,#D4AF37 45%,#b8860b 100%);
+  --grad-gold-text:linear-gradient(180deg,#fff3b0 0%,#FFD700 40%,#D4AF37 70%,#9a7414 100%);
+  --shadow-gold:0 0 40px rgba(255,215,0,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--black);
+  color:var(--white-soft);
+  line-height:1.65;
+  overflow-x:hidden;
+  /* textura rugosa sutil */
+  background-image:
+    radial-gradient(circle at 20% 10%,rgba(212,175,55,.06),transparent 40%),
+    radial-gradient(circle at 80% 90%,rgba(212,175,55,.05),transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+}
+h1,h2,h3,h4{font-family:'Cinzel',serif;letter-spacing:.02em;line-height:1.2}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+section{position:relative;padding:100px 0;scroll-margin-top:80px}
+.container{width:min(1180px,92%);margin:0 auto}
+
+/* Texto degradado dorado reutilizable */
+.gold-text{
+  background:var(--grad-gold-text);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+
+/* Título de sección */
+.sec-head{text-align:center;margin-bottom:60px}
+.sec-kicker{
+  font-family:'Inter';font-weight:600;letter-spacing:.35em;text-transform:uppercase;
+  font-size:.72rem;color:var(--gold-2);display:inline-block;margin-bottom:14px;
+}
+.sec-title{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:800;color:var(--white)}
+.sec-title .gold-text{font-weight:900}
+.sec-sub{max-width:680px;margin:18px auto 0;color:rgba(245,245,245,.7);font-size:1.02rem}
+.divider{
+  width:90px;height:3px;margin:22px auto 0;border-radius:3px;background:var(--grad-gold);
+  box-shadow:0 0 18px rgba(255,215,0,.6);
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  transition:background .35s ease,box-shadow .35s ease,border-color .35s;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(5,5,5,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.5);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Cinzel';font-weight:800;font-size:1.25rem}
+.brand .mark{
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;overflow:hidden;
+  background:#000;border:1.5px solid var(--gold-2);color:var(--gold);font-size:1.1rem;
+  box-shadow:0 0 18px rgba(255,215,0,.35);
+}
+.brand .mark img{width:100%;height:100%;object-fit:cover}
+.brand .name{color:var(--white)}
+.brand .name b{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:rgba(245,245,245,.82);transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--grad-gold);transition:width .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.btn-nav{
+  font-family:'Inter';font-weight:700;font-size:.85rem;padding:11px 22px;border-radius:50px;
+  background:var(--grad-gold);color:#1a1300!important;border:none;cursor:pointer;
+  box-shadow:0 0 22px rgba(255,215,0,.35);transition:transform .25s,box-shadow .25s;
+}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 0 34px rgba(255,215,0,.6)}
+.burger{display:none;font-size:1.5rem;color:var(--gold);background:none;border:none;cursor:pointer}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;padding-top:110px;
+  background:
+    radial-gradient(ellipse at 50% 35%,rgba(255,215,0,.10),transparent 55%),
+    linear-gradient(180deg,#000 0%,#080503 60%,#000 100%);
+  overflow:hidden;
+}
+/* partículas de brasas */
+.embers{position:absolute;inset:0;pointer-events:none;z-index:0}
+.ember{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 8px 2px rgba(255,215,0,.7);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) scale(1);opacity:0}10%{opacity:.9}100%{transform:translateY(-105vh) scale(.2);opacity:0}}
+
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero-ticker{
+  display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:50px;
+  border:1px solid var(--line);background:rgba(212,175,55,.07);
+  font-family:'Inter';font-weight:700;letter-spacing:.12em;font-size:.82rem;color:var(--gold);margin-bottom:24px;
+}
+.hero-ticker .dot{width:8px;height:8px;border-radius:50%;background:#39ff7d;box-shadow:0 0 10px #39ff7d;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:900;color:var(--white);margin-bottom:8px}
+.hero h1 .gold-text{display:block}
+.hero .slogan{
+  font-family:'Playfair Display';font-style:italic;font-size:clamp(1.05rem,2vw,1.45rem);
+  color:var(--gold-2);margin:22px 0 10px;font-weight:600;
+}
+.hero .slogan-es{font-family:'Inter';font-style:normal;font-size:.95rem;color:rgba(245,245,245,.6)}
+.hero .lead{font-size:1.08rem;color:rgba(245,245,245,.82);max-width:540px;margin:26px 0 36px;font-weight:300}
+.hero .lead b{color:var(--white);font-weight:600}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{
+  font-family:'Inter';font-weight:700;font-size:.95rem;padding:15px 32px;border-radius:50px;
+  background:var(--grad-gold);color:#1a1300;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+  box-shadow:0 0 26px rgba(255,215,0,.4);transition:transform .25s,box-shadow .25s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 42px rgba(255,215,0,.7)}
+.btn-ghost{
+  font-family:'Inter';font-weight:700;font-size:.95rem;padding:15px 32px;border-radius:50px;
+  background:transparent;color:var(--gold);border:1.5px solid var(--gold-2);cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;transition:all .25s;
+}
+.btn-ghost:hover{background:rgba(255,215,0,.1);transform:translateY(-3px)}
+
+/* Logo / León hero */
+.hero-visual{position:relative;display:grid;place-items:center}
+.lion-halo{
+  position:absolute;width:115%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,215,0,.28),transparent 60%);
+  filter:blur(20px);animation:breathe 5s ease-in-out infinite;
+}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+.lion-frame{
+  position:relative;width:min(420px,80%);aspect-ratio:1;border-radius:50%;
+  border:2px solid var(--gold-2);overflow:hidden;
+  background:radial-gradient(circle at 50% 30%,#161616,#000);
+  box-shadow:0 0 60px rgba(255,215,0,.35),inset 0 0 60px rgba(0,0,0,.7);
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.lion-frame img{width:100%;height:100%;object-fit:contain}
+/* SVG/Icono fallback del león coronado */
+.lion-fallback{width:100%;height:100%;display:grid;place-items:center;position:relative}
+.lion-fallback .crown{position:absolute;top:14%;font-size:3rem;color:var(--gold)}
+.lion-fallback .face{font-size:9rem;color:var(--gold);filter:drop-shadow(0 0 22px rgba(255,215,0,.5))}
+.lion-fallback .swords{position:absolute;font-size:2.4rem;color:var(--gold-2);opacity:.55}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.statbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(10,8,3,.5)}
+.statbar .container{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;padding:34px 0}
+.stat{text-align:center}
+.stat .num{font-family:'Cinzel';font-weight:800;font-size:clamp(1.4rem,3vw,2.1rem)}
+.stat .lbl{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,245,.55);margin-top:6px}
+.stat-highlight{position:relative;padding:8px 12px;border-radius:12px;border:1px solid rgba(255,215,0,.3);background:rgba(255,215,0,.05)}
+.stat-highlight .num{font-size:clamp(1.6rem,3.5vw,2.4rem) !important}
+.stat-highlight .lbl{color:var(--gold-2) !important}
+
+/* ============================================================
+   CONCEPTO / PILARES
+   ============================================================ */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px}
+.card{
+  background:linear-gradient(160deg,rgba(20,16,6,.9),rgba(8,8,8,.9));
+  border:1px solid var(--line);border-radius:18px;padding:34px 28px;position:relative;
+  transition:transform .35s,border-color .35s,box-shadow .35s;overflow:hidden;
+}
+.card::before{content:'';position:absolute;inset:0;border-radius:18px;padding:1px;
+  background:var(--grad-gold);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-gold)}
+.card:hover::before{opacity:1}
+.card .ico{
+  width:62px;height:62px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;
+  background:rgba(255,215,0,.08);border:1px solid var(--line);color:var(--gold);margin-bottom:20px;
+}
+.card h3{font-size:1.3rem;color:var(--white);margin-bottom:12px}
+.card p{font-size:.95rem;color:rgba(245,245,245,.72);font-weight:300}
+.pillar .tag{font-family:'Cinzel';font-weight:800;font-size:1.5rem}
+
+.concept-lead{
+  text-align:center;max-width:820px;margin:0 auto;font-size:1.12rem;font-weight:300;
+  color:rgba(245,245,245,.85);
+}
+.represent{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:46px}
+.represent span{
+  padding:10px 20px;border-radius:50px;border:1px solid var(--line);font-size:.82rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gold-2);font-weight:600;
+  background:rgba(212,175,55,.05);transition:all .25s;
+}
+.represent span:hover{background:rgba(255,215,0,.12);color:var(--gold);transform:translateY(-3px)}
+
+/* ============================================================
+   TOKENOMICS
+   ============================================================ */
+.token-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.token-supply{
+  text-align:center;padding:40px;border-radius:22px;border:1px solid var(--line);
+  background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.08),transparent 60%);
+}
+.token-coin{width:170px;margin:0 auto 22px;border-radius:50%;filter:drop-shadow(0 0 30px rgba(255,215,0,.4));animation:float 5s ease-in-out infinite}
+.token-supply .big{font-family:'Cinzel';font-weight:900;font-size:clamp(2.2rem,6vw,3.6rem)}
+.token-supply .lbl{letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;color:rgba(245,245,245,.6);margin-top:8px}
+.token-note{margin-top:24px;display:inline-flex;align-items:center;gap:10px;font-size:.85rem;color:var(--gold-2)}
+.dist-list{display:flex;flex-direction:column;gap:20px}
+.dist-row{display:flex;flex-direction:column;gap:8px}
+.dist-top{display:flex;justify-content:space-between;align-items:center}
+.dist-name{font-weight:600;color:var(--white-soft);font-size:.95rem}
+.dist-pct{font-family:'Cinzel';font-weight:800;color:var(--gold);font-size:1.1rem}
+.dist-bar{height:9px;border-radius:50px;background:rgba(255,255,255,.06);overflow:hidden}
+.dist-fill{height:100%;border-radius:50px;background:var(--grad-gold);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 12px rgba(255,215,0,.5)}
+
+/* ============================================================
+   UTILIDADES (grid)
+   ============================================================ */
+.util-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.util{
+  display:flex;align-items:center;gap:16px;padding:22px;border-radius:14px;
+  border:1px solid var(--line);background:rgba(12,10,4,.6);transition:all .3s;
+}
+.util:hover{transform:translateY(-5px);border-color:var(--gold-2);box-shadow:var(--shadow-gold)}
+.util i{font-size:1.4rem;color:var(--gold);min-width:34px;text-align:center}
+.util span{font-size:.95rem;font-weight:500;color:var(--white-soft)}
+
+/* ============================================================
+   LEVEL SYSTEM
+   ============================================================ */
+.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.level{
+  text-align:center;padding:30px 18px;border-radius:18px;border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(20,16,6,.7),rgba(6,6,6,.9));position:relative;transition:all .35s;
+}
+.level:hover{transform:translateY(-10px) scale(1.03);box-shadow:var(--shadow-gold);border-color:var(--gold)}
+.level .rank-ico{font-size:2.2rem;color:var(--gold);margin-bottom:14px}
+.level h4{font-family:'Cinzel';font-size:1.15rem;color:var(--white);letter-spacing:.08em}
+.level .req{margin-top:12px;font-size:.85rem;color:var(--gold-2);font-weight:600}
+.level .req b{display:block;font-family:'Cinzel';font-size:1.25rem;color:var(--gold)}
+.level .step{position:absolute;top:14px;right:16px;font-size:.7rem;color:rgba(245,245,245,.3);font-weight:700}
+
+/* ============================================================
+   GAMIFICACIÓN
+   ============================================================ */
+.game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.game-chip{
+  display:flex;flex-direction:column;gap:12px;padding:24px;border-radius:14px;
+  border:1px solid var(--line);background:rgba(12,10,4,.55);transition:all .3s;
+}
+.game-chip:hover{background:rgba(255,215,0,.07);transform:translateY(-5px)}
+.game-chip i{font-size:1.5rem;color:var(--gold)}
+.game-chip span{font-size:.92rem;font-weight:500}
+
+/* ============================================================
+   LION AI
+   ============================================================ */
+.ai-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.ai-visual{
+  position:relative;border-radius:22px;border:1px solid var(--line);padding:40px;min-height:340px;
+  background:radial-gradient(circle at 50% 40%,rgba(255,215,0,.1),transparent 60%),rgba(8,8,8,.8);
+  display:grid;place-items:center;overflow:hidden;
+}
+.ai-core{
+  width:140px;height:140px;border-radius:50%;display:grid;place-items:center;font-size:3.4rem;color:#1a1300;
+  background:var(--grad-gold);box-shadow:0 0 60px rgba(255,215,0,.55);position:relative;z-index:2;animation:breathe 4s ease-in-out infinite;
+}
+.ai-ring{position:absolute;border:1px dashed var(--line);border-radius:50%;animation:spin 18s linear infinite}
+.ai-ring.r1{width:230px;height:230px}
+.ai-ring.r2{width:300px;height:300px;animation-duration:26s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ai-feats{display:flex;flex-direction:column;gap:16px}
+.ai-feat{display:flex;align-items:flex-start;gap:16px;padding:16px 18px;border-radius:12px;border:1px solid var(--line);background:rgba(12,10,4,.5);transition:all .3s}
+.ai-feat:hover{border-color:var(--gold-2);background:rgba(255,215,0,.05)}
+.ai-feat i{color:var(--gold);font-size:1.2rem;margin-top:3px}
+.ai-feat b{color:var(--white);display:block;font-size:.98rem}
+.ai-feat p{font-size:.85rem;color:rgba(245,245,245,.6);font-weight:300}
+
+/* ============================================================
+   ROADMAP
+   ============================================================ */
+.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.phase{
+  border:1px solid var(--line);border-radius:18px;padding:34px 28px;position:relative;
+  background:linear-gradient(180deg,rgba(20,16,6,.7),rgba(6,6,6,.9));transition:all .35s;
+}
+.phase:hover{transform:translateY(-8px);box-shadow:var(--shadow-gold);border-color:var(--gold-2)}
+.phase .ph-num{font-family:'Cinzel';font-weight:900;font-size:3rem;line-height:1;opacity:.25;color:var(--gold)}
+.phase h3{font-size:1.25rem;color:var(--white);margin:8px 0 6px}
+.phase .ph-name{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px}
+.phase ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.phase li{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:rgba(245,245,245,.78);font-weight:300}
+.phase li i{color:var(--gold);font-size:.85rem;margin-top:5px}
+.phase .pill{position:absolute;top:28px;right:28px;font-size:.68rem;font-weight:700;letter-spacing:.1em;padding:5px 12px;border-radius:50px;border:1px solid var(--line);color:var(--gold-2)}
+
+/* ============================================================
+   LGSE / MÓDULOS
+   ============================================================ */
+.lgse-intro{max-width:780px;margin:0 auto 50px;text-align:center;font-weight:300;color:rgba(245,245,245,.82);font-size:1.05rem}
+.modules{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.module{
+  text-align:center;padding:28px 18px;border-radius:16px;border:1px solid var(--line);
+  background:rgba(12,10,4,.55);transition:all .35s;position:relative;
+}
+.module.core{border-color:var(--gold);background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.12),rgba(12,10,4,.7))}
+.module:hover{transform:translateY(-6px);box-shadow:var(--shadow-gold)}
+.module i{font-size:1.8rem;color:var(--gold);margin-bottom:14px}
+.module h4{font-size:1rem;color:var(--white);font-family:'Cinzel'}
+.module p{font-size:.82rem;color:rgba(245,245,245,.6);margin-top:8px;font-weight:300}
+.lgse-funcs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:44px}
+.lgse-funcs span{padding:9px 18px;border-radius:50px;border:1px solid var(--line);font-size:.8rem;color:var(--gold-2);background:rgba(212,175,55,.05)}
+
+/* ============================================================
+   INTEGRACIONES
+   ============================================================ */
+.integrations{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.integ{
+  display:flex;align-items:center;gap:12px;padding:16px 26px;border-radius:14px;
+  border:1px solid var(--line);background:rgba(12,10,4,.55);transition:all .3s;font-weight:600;font-size:.92rem;
+}
+.integ:hover{transform:translateY(-5px);border-color:var(--gold-2);color:var(--gold)}
+.integ i{color:var(--gold);font-size:1.2rem}
+.integ-watch{text-align:center;margin-top:40px;color:rgba(245,245,245,.6);font-size:.92rem}
+.integ-watch b{color:var(--gold-2)}
+
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+.final-cta{text-align:center;padding:120px 0}
+.cta-emblem{width:min(260px,60%);margin:0 auto 30px;border-radius:18px;filter:drop-shadow(0 0 40px rgba(255,215,0,.35));animation:float 6s ease-in-out infinite}
+.final-cta .quote{font-family:'Playfair Display';font-style:italic;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--white);max-width:880px;margin:0 auto 30px;line-height:1.4}
+.final-cta .quote .gold-text{font-style:italic}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#070502);padding:70px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:50px}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.foot-brand .mark{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;overflow:hidden;border:1.5px solid var(--gold-2);background:#000;color:var(--gold);font-size:1.4rem;box-shadow:0 0 20px rgba(255,215,0,.3)}
+.foot-brand .mark img{width:100%;height:100%;object-fit:cover}
+.foot-brand h3{font-size:1.3rem;color:var(--white)}
+.foot-brand h3 b{color:var(--gold)}
+.foot-col p{font-size:.9rem;color:rgba(245,245,245,.6);font-weight:300;max-width:360px}
+.foot-col h4{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.foot-col ul a{font-size:.92rem;color:rgba(245,245,245,.7);transition:color .25s}
+.foot-col ul a:hover{color:var(--gold)}
+.socials{display:flex;gap:14px;margin-top:22px}
+.socials a{
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;
+  border:1px solid var(--line);color:var(--gold);transition:all .3s;
+}
+.socials a:hover{background:var(--grad-gold);color:#1a1300;transform:translateY(-4px);box-shadow:0 0 20px rgba(255,215,0,.5)}
+.tag-line{font-family:'Cinzel';color:var(--gold-2);letter-spacing:.2em;margin-top:16px;font-size:.85rem}
+.disclaimer{border-top:1px solid var(--line);padding-top:26px;font-size:.78rem;color:rgba(245,245,245,.45);font-weight:300;max-width:900px;margin:0 auto;text-align:center}
+.copyright{text-align:center;margin-top:20px;font-family:'Cinzel';font-size:.85rem;color:rgba(245,245,245,.55)}
+.copyright b{color:var(--gold)}
+
+/* ============================================================
+   PROOF OF RESERVES
+   ============================================================ */
+.por-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center}
+.por-big{text-align:center;padding:44px 36px;border-radius:24px;border:1px solid rgba(255,215,0,.35);
+  background:radial-gradient(circle at 50% 0%,rgba(255,215,0,.12),transparent 60%);
+  position:relative;overflow:hidden}
+.por-big::before{content:'';position:absolute;inset:-1px;border-radius:24px;padding:1px;
+  background:var(--grad-gold);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.6}
+.por-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:50px;
+  background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);
+  font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px}
+.por-badge i{color:#39ff7d;font-size:.85rem}
+.por-amount{font-family:'Cinzel';font-weight:900;font-size:clamp(2.4rem,6vw,4rem);
+  background:var(--grad-gold-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;margin-bottom:6px}
+.por-denom{font-family:'Cinzel';font-weight:700;font-size:clamp(1rem,2vw,1.5rem);color:var(--gold-2);letter-spacing:.12em}
+.por-network{margin-top:16px;font-size:.82rem;color:rgba(245,245,245,.5);letter-spacing:.1em}
+.por-network b{color:var(--white-soft)}
+.por-divider{width:60px;height:2px;background:var(--grad-gold);margin:22px auto;border-radius:2px;box-shadow:0 0 12px rgba(255,215,0,.5)}
+.por-monitor{display:inline-flex;align-items:center;gap:10px;font-size:.88rem;color:var(--gold-2);font-weight:600}
+.por-monitor i{font-size:1rem;color:var(--gold)}
+.por-cards{display:flex;flex-direction:column;gap:20px}
+.por-card{display:flex;gap:20px;align-items:flex-start;padding:24px;border-radius:16px;
+  border:1px solid var(--line);background:rgba(12,10,4,.55);transition:all .3s}
+.por-card:hover{border-color:var(--gold-2);background:rgba(255,215,0,.05);transform:translateX(6px)}
+.por-card .ic{width:52px;height:52px;min-width:52px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,215,0,.08);border:1px solid var(--line);font-size:1.4rem;color:var(--gold)}
+.por-card h4{font-family:'Cinzel';font-size:1rem;color:var(--white);margin-bottom:8px;letter-spacing:.04em}
+.por-card p{font-size:.9rem;color:rgba(245,245,245,.7);font-weight:300;line-height:1.6}
+.por-disclaimer{margin-top:30px;padding:18px 22px;border-radius:12px;border:1px solid rgba(255,215,0,.15);
+  background:rgba(255,215,0,.04);font-size:.82rem;color:rgba(245,245,245,.55);font-weight:300;display:flex;gap:12px;align-items:flex-start}
+.por-disclaimer i{color:var(--gold-2);font-size:1rem;margin-top:2px;min-width:16px}
+
+/* ============================================================
+   ANIMACIÓN FADE-IN AL SCROLL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-cta{justify-content:center}
+  .hero .lead{margin-left:auto;margin-right:auto}
+  .hero-visual{order:-1;margin-bottom:20px}
+  .token-grid,.ai-wrap,.por-wrap{grid-template-columns:1fr;gap:36px}
+  .pillars,.roadmap{grid-template-columns:1fr}
+  .util-grid,.game-grid{grid-template-columns:repeat(2,1fr)}
+  .levels{grid-template-columns:repeat(2,1fr)}
+  .modules{grid-template-columns:repeat(2,1fr)}
+  .statbar .container{grid-template-columns:repeat(3,1fr);gap:20px}
+  .foot-grid{grid-template-columns:1fr;gap:34px}
+}
+@media(max-width:640px){
+  section{padding:70px 0}
+  .nav-links{
+    position:fixed;top:72px;right:0;width:75%;height:calc(100vh - 72px);flex-direction:column;
+    align-items:flex-start;gap:24px;padding:36px 30px;background:rgba(5,5,5,.97);
+    backdrop-filter:blur(14px);border-left:1px solid var(--line);transform:translateX(110%);transition:transform .35s;z-index:999;
+  }
+  .nav-links.open{transform:translateX(0)}
+  .burger{display:block}
+  .util-grid,.game-grid,.modules{grid-template-columns:1fr}
+  .levels{grid-template-columns:1fr}
+  .statbar .container{grid-template-columns:repeat(2,1fr)}
+  .hero-ticker{margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header id="header">
+  <nav class="nav container">
+    <a href="#hero" class="brand">
+      <span class="mark"><img src="liong-coin.png" alt="$LIONG"></span>
+      <span class="name">LION <b>GENESIS</b></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#concepto">Concepto</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#niveles">Niveles</a></li>
+      <li><a href="#ai">Lion AI</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#reserves">Reserves</a></li>
+      <li><a href="#tokenomics" class="btn-nav">Unirse al Reino</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+</header>
+
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div class="embers" id="embers"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-ticker"><span class="dot"></span> $LIONG · THE KING OF MEMES</div>
+      <h1>No es una meme coin.<span class="gold-text">Es el despertar de un imperio.</span></h1>
+      <p class="lead">Una <b>comunidad digital con poder, inteligencia y propósito.</b> Fuerza, liderazgo, IA y legado — el meme como puerta de entrada a un ecosistema global.</p>
+      <p class="slogan">"The Lion does not chase hype. The Lion builds legacy."</p>
+      <p class="slogan-es">El león no persigue la moda. El león construye legado.</p>
+      <div class="hero-cta">
+        <a href="#tokenomics" class="btn-primary"><i class="fa-solid fa-crown"></i> Unirse al Reino</a>
+        <a href="#tokenomics" class="btn-ghost"><i class="fa-solid fa-chart-pie"></i> Ver Tokenomics</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="lion-halo"></div>
+      <div class="lion-frame">
+        <img src="hero-logo.png" alt="$LIONG Lion Genesis">
+        <div class="lion-fallback" id="lionFallback" style="display:none">
+          <i class="fa-solid fa-crown crown"></i>
+          <i class="fa-solid fa-paw face"></i>
+          <i class="fa-solid fa-khanda swords" style="bottom:18%"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<div class="statbar">
+  <div class="container">
+    <div class="stat"><div class="num gold-text">1B</div><div class="lbl">Supply Total</div></div>
+    <div class="stat"><div class="num gold-text">40%</div><div class="lbl">Liquidez Bloqueada</div></div>
+    <div class="stat stat-highlight"><div class="num gold-text">$10M</div><div class="lbl">USDT · Proof of Reserves</div></div>
+    <div class="stat"><div class="num gold-text">5</div><div class="lbl">Niveles de Rango</div></div>
+    <div class="stat"><div class="num gold-text">7</div><div class="lbl">Módulos de IA</div></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     2. CONCEPTO Y NARRATIVA
+     ============================================================ -->
+<section id="concepto">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Concepto &amp; Narrativa</span>
+      <h2 class="sec-title">El León representa <span class="gold-text">el Reino Digital</span></h2>
+      <div class="divider"></div>
+    </div>
+    <p class="concept-lead reveal">LION GENESIS es una <b style="color:var(--gold)">meme coin premium</b> basada en fuerza, liderazgo, inteligencia artificial y comunidad global. Un ecosistema digital donde el meme sirve como puerta de entrada a una comunidad gamificada, con IA, recompensas y expansión futura.</p>
+
+    <div class="pillars">
+      <div class="card pillar reveal">
+        <div class="ico"><i class="fa-solid fa-dumbbell"></i></div>
+        <span class="tag gold-text">FUERZA</span>
+        <h3>Poder &amp; Dominio</h3>
+        <p>El león domina el caos financiero. Liquidez sólida, comunidad firme y mentalidad de reino que no sigue al mercado: lo crea.</p>
+      </div>
+      <div class="card pillar reveal">
+        <div class="ico"><i class="fa-solid fa-brain"></i></div>
+        <span class="tag gold-text">INTELIGENCIA</span>
+        <h3>IA al Servicio del Reino</h3>
+        <p>Lion AI potencia memes, análisis y campañas. La tecnología transforma el hype en estrategia y la comunidad en movimiento.</p>
+      </div>
+      <div class="card pillar reveal">
+        <div class="ico"><i class="fa-solid fa-shield-halved"></i></div>
+        <span class="tag gold-text">LEALTAD</span>
+        <h3>Comunidad &amp; Legado</h3>
+        <p>Holders que protegen, votan y construyen. La lealtad se premia con rangos, recompensas y voz dentro del imperio.</p>
+      </div>
+    </div>
+
+    <div class="represent reveal">
+      <span>Poder</span><span>Protección</span><span>Liderazgo</span>
+      <span>Reino Digital</span><span>Dominio del Caos Financiero</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. TOKENOMICS
+     ============================================================ -->
+<section id="tokenomics" style="background:rgba(8,6,2,.4)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Tokenomics</span>
+      <h2 class="sec-title">La economía del <span class="gold-text">$LIONG</span></h2>
+      <div class="divider"></div>
+      <p class="sec-sub">Distribución transparente y diseñada para la sostenibilidad del ecosistema.</p>
+    </div>
+
+    <div class="token-grid">
+      <div class="token-supply reveal">
+        <img src="liong-coin.png" alt="Moneda $LIONG" class="token-coin">
+        <div class="big gold-text">1.000.000.000</div>
+        <div class="lbl">$LIONG · Supply Total</div>
+        <div class="token-note"><i class="fa-solid fa-lock"></i> Liquidez inicial bloqueada y auditada</div>
+      </div>
+      <div class="dist-list reveal">
+        <div class="dist-row">
+          <div class="dist-top"><span class="dist-name">Liquidez inicial</span><span class="dist-pct">40%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="40"></div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-top"><span class="dist-name">Comunidad / Airdrops</span><span class="dist-pct">20%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="20"></div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-top"><span class="dist-name">Marketing</span><span class="dist-pct">15%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="15"></div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-top"><span class="dist-name">Tesorería del ecosistema</span><span class="dist-pct">15%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="15"></div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-top"><span class="dist-name">Equipo fundador</span><span class="dist-pct">10%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="10"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. UTILIDADES DEL TOKEN
+     ============================================================ -->
+<section id="utilidades">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Utilidades</span>
+      <h2 class="sec-title">¿Qué desbloquea <span class="gold-text">$LIONG</span>?</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="util-grid">
+      <div class="util reveal"><i class="fa-solid fa-user-shield"></i><span>Acceso a comunidad privada</span></div>
+      <div class="util reveal"><i class="fa-solid fa-ranking-star"></i><span>Ranking de holders</span></div>
+      <div class="util reveal"><i class="fa-solid fa-gift"></i><span>Recompensas por participación</span></div>
+      <div class="util reveal"><i class="fa-solid fa-check-to-slot"></i><span>Votaciones internas</span></div>
+      <div class="util reveal"><i class="fa-solid fa-robot"></i><span>Acceso a herramientas de IA</span></div>
+      <div class="util reveal"><i class="fa-solid fa-gem"></i><span>NFTs especiales</span></div>
+      <div class="util reveal"><i class="fa-solid fa-gamepad"></i><span>Juegos y misiones</span></div>
+      <div class="util reveal"><i class="fa-solid fa-shirt"></i><span>Merchandising digital</span></div>
+      <div class="util reveal"><i class="fa-solid fa-calendar-star"></i><span>Eventos privados</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. SISTEMA DE NIVELES
+     ============================================================ -->
+<section id="niveles" style="background:rgba(8,6,2,.4)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Level System</span>
+      <h2 class="sec-title">Asciende en el <span class="gold-text">Reino</span></h2>
+      <div class="divider"></div>
+      <p class="sec-sub">Cuantos más $LIONG mantengas, mayor tu rango, poder y recompensas dentro del ecosistema.</p>
+    </div>
+    <div class="levels">
+      <div class="level reveal"><span class="step">01</span><i class="fa-solid fa-paw rank-ico"></i><h4>CUB</h4><div class="req">Requiere<b>10.000</b>$LIONG</div></div>
+      <div class="level reveal"><span class="step">02</span><i class="fa-solid fa-khanda rank-ico"></i><h4>WARRIOR</h4><div class="req">Requiere<b>100.000</b>$LIONG</div></div>
+      <div class="level reveal"><span class="step">03</span><i class="fa-solid fa-crown rank-ico"></i><h4>LION</h4><div class="req">Requiere<b>1.000.000</b>$LIONG</div></div>
+      <div class="level reveal"><span class="step">04</span><i class="fa-solid fa-chess-king rank-ico"></i><h4>KING</h4><div class="req">Requiere<b>10.000.000</b>$LIONG</div></div>
+      <div class="level reveal"><span class="step">05</span><i class="fa-solid fa-bolt rank-ico"></i><h4>INMORTAL</h4><div class="req">Requiere<b>50.000.000</b>$LIONG</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. GAMIFICACIÓN Y RECOMPENSAS
+     ============================================================ -->
+<section id="gamificacion">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Gamificación &amp; Recompensas</span>
+      <h2 class="sec-title">Gana puntos. <span class="gold-text">Construye legado.</span></h2>
+      <div class="divider"></div>
+      <p class="sec-sub">Cada acción suma. La comunidad activa es recompensada y escala en el ranking.</p>
+    </div>
+    <div class="game-grid">
+      <div class="game-chip reveal"><i class="fa-solid fa-face-laugh-squint"></i><span>Crear memes</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-user-plus"></i><span>Invitar usuarios</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-share-nodes"></i><span>Compartir publicaciones</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-hand-holding-dollar"></i><span>Mantener tokens</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-check-to-slot"></i><span>Votar</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-fire"></i><span>Contenido viral</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-flag-checkered"></i><span>Misiones semanales</span></div>
+      <div class="game-chip reveal"><i class="fa-solid fa-trophy"></i><span>Subir de rango</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7. LION AI
+     ============================================================ -->
+<section id="ai" style="background:rgba(8,6,2,.4)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Lion AI</span>
+      <h2 class="sec-title">La <span class="gold-text">Inteligencia</span> del Ecosistema</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="ai-wrap">
+      <div class="ai-visual reveal">
+        <div class="ai-ring r1"></div>
+        <div class="ai-ring r2"></div>
+        <div class="ai-core"><i class="fa-solid fa-robot"></i></div>
+      </div>
+      <div class="ai-feats reveal">
+        <div class="ai-feat"><i class="fa-solid fa-wand-magic-sparkles"></i><div><b>Memes &amp; frases automáticas</b><p>Genera memes virales e imágenes del ecosistema bajo demanda.</p></div></div>
+        <div class="ai-feat"><i class="fa-solid fa-image"></i><div><b>Imágenes del ecosistema</b><p>Crea arte y assets coherentes con la identidad dorada del reino.</p></div></div>
+        <div class="ai-feat"><i class="fa-brands fa-telegram"></i><div><b>Asistente en Telegram</b><p>Responde a la comunidad y atiende a los holders en tiempo real.</p></div></div>
+        <div class="ai-feat"><i class="fa-solid fa-chart-line"></i><div><b>Análisis de comunidad</b><p>Mide actividad, detecta tendencias y ayuda a crear campañas efectivas.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. ROADMAP
+     ============================================================ -->
+<section id="roadmap">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Roadmap</span>
+      <h2 class="sec-title">El camino del <span class="gold-text">Imperio</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="roadmap">
+      <div class="phase reveal">
+        <span class="pill">FASE 1</span>
+        <div class="ph-num">01</div>
+        <h3>Genesis Launch</h3>
+        <div class="ph-name">El despertar</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i> Creación del token $LIONG</li>
+          <li><i class="fa-solid fa-check"></i> Logo &amp; identidad de marca</li>
+          <li><i class="fa-solid fa-check"></i> Web oficial</li>
+          <li><i class="fa-solid fa-check"></i> X/Twitter &amp; Telegram</li>
+          <li><i class="fa-solid fa-check"></i> Lanzamiento inicial</li>
+        </ul>
+      </div>
+      <div class="phase reveal">
+        <span class="pill">FASE 2</span>
+        <div class="ph-num">02</div>
+        <h3>Community Power</h3>
+        <div class="ph-name">El rugido</div>
+        <ul>
+          <li><i class="fa-solid fa-bolt"></i> Campañas virales</li>
+          <li><i class="fa-solid fa-bolt"></i> Airdrops</li>
+          <li><i class="fa-solid fa-bolt"></i> Sistema de rangos</li>
+          <li><i class="fa-solid fa-bolt"></i> Memes oficiales</li>
+          <li><i class="fa-solid fa-bolt"></i> Primeras votaciones</li>
+        </ul>
+      </div>
+      <div class="phase reveal">
+        <span class="pill">FASE 3</span>
+        <div class="ph-num">03</div>
+        <h3>Lion AI</h3>
+        <div class="ph-name">El reino inteligente</div>
+        <ul>
+          <li><i class="fa-solid fa-star"></i> Bot de IA</li>
+          <li><i class="fa-solid fa-star"></i> Generador de memes</li>
+          <li><i class="fa-solid fa-star"></i> Panel de comunidad</li>
+          <li><i class="fa-solid fa-star"></i> Misiones automatizadas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9. MÓDULO DE ESTABILIDAD (LGSE)
+     ============================================================ -->
+<section id="lgse" style="background:rgba(8,6,2,.4)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Estabilidad · LGSE</span>
+      <h2 class="sec-title">LION GENESIS <span class="gold-text">Stability Engine</span></h2>
+      <div class="divider"></div>
+    </div>
+    <p class="lgse-intro reveal">El bot de IA integra el <b style="color:var(--gold)">LION GENESIS Stability Engine (LGSE)</b>, un subsistema dentro del <b style="color:var(--gold-2)">AI Reserve Monitor &amp; Trading Intelligence Engine</b> que protege el ecosistema con 7 módulos coordinados.</p>
+
+    <div class="modules">
+      <div class="module reveal"><i class="fa-solid fa-vault"></i><h4>Proof of Reserves</h4><p>Verificación y transparencia de reservas.</p></div>
+      <div class="module reveal"><i class="fa-solid fa-chart-line"></i><h4>Trading Intelligence</h4><p>Análisis e inteligencia de mercado.</p></div>
+      <div class="module reveal"><i class="fa-solid fa-triangle-exclamation"></i><h4>Risk</h4><p>Gestión de riesgo y drawdown.</p></div>
+      <div class="module reveal"><i class="fa-solid fa-droplet"></i><h4>Liquidity &amp; MM</h4><p>Market making dinámico y liquidez.</p></div>
+      <div class="module core reveal"><i class="fa-solid fa-shield-halved"></i><h4>LGSE</h4><p>Núcleo de estabilidad del sistema.</p></div>
+      <div class="module reveal"><i class="fa-solid fa-fish-fins"></i><h4>Whale Monitoring</h4><p>Vigilancia de grandes movimientos.</p></div>
+      <div class="module reveal"><i class="fa-solid fa-hand-holding-heart"></i><h4>Community &amp; Reward</h4><p>Recompensas y salud comunitaria.</p></div>
+      <div class="module reveal"><i class="fa-solid fa-circle-stop"></i><h4>Circuit Breaker</h4><p>Cortacircuitos ante volatilidad extrema.</p></div>
+    </div>
+
+    <div class="lgse-funcs reveal">
+      <span>Protección de liquidez</span>
+      <span>Market making dinámico</span>
+      <span>Control de volatilidad</span>
+      <span>Whale monitoring</span>
+      <span>Circuit breaker</span>
+      <span>Gestión de drawdown</span>
+      <span>Vesting programado</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROOF OF RESERVES
+     ============================================================ -->
+<section id="reserves" style="background:rgba(8,6,2,.4)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Transparencia · On-Chain</span>
+      <h2 class="sec-title">Proof of <span class="gold-text">Reserves</span></h2>
+      <div class="divider"></div>
+      <p class="sec-sub">El ecosistema LION GENESIS mantiene reservas verificables monitoreadas de forma independiente por el sistema de IA.</p>
+    </div>
+
+    <div class="por-wrap">
+      <!-- CIFRA PRINCIPAL -->
+      <div class="por-big reveal">
+        <div class="por-badge"><i class="fa-solid fa-circle"></i> Monitoreado en tiempo real</div>
+        <div class="por-amount">10,000,000</div>
+        <div class="por-denom">USDT ERC-20</div>
+        <div class="por-network">Red: <b>Ethereum Mainnet</b></div>
+        <div class="por-divider"></div>
+        <div class="por-monitor"><i class="fa-solid fa-robot"></i> AI Reserve Monitor · Watch-Only</div>
+      </div>
+
+      <!-- TARJETAS INFORMATIVAS -->
+      <div class="por-cards">
+        <div class="por-card reveal">
+          <div class="ic"><i class="fa-solid fa-vault"></i></div>
+          <div>
+            <h4>Reservas Monitoreadas</h4>
+            <p>El ecosistema LION GENESIS mantiene 10,000,000 USDT ERC-20 monitoreados de forma independiente. La cifra es visible, verificable y actualizada por el sistema de IA.</p>
+          </div>
+        </div>
+        <div class="por-card reveal">
+          <div class="ic"><i class="fa-solid fa-eye"></i></div>
+          <div>
+            <h4>Arquitectura Watch-Only</h4>
+            <p>Las reservas operan bajo arquitectura de solo lectura. El AI Reserve Monitor supervisa constantemente sin capacidad de mover fondos, garantizando integridad total.</p>
+          </div>
+        </div>
+        <div class="por-card reveal">
+          <div class="ic"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <div>
+            <h4>Transparencia del Ecosistema</h4>
+            <p>Las reservas otorgan visibilidad y confianza al ecosistema. Su función es de transparencia: no constituyen un derecho de redención directo para los holders de tokens.</p>
+          </div>
+        </div>
+        <div class="por-disclaimer reveal">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Las reservas proporcionan transparencia y visibilidad al ecosistema, pero no constituyen un derecho de redención directo para los titulares de tokens.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     10. INTEGRACIÓN CON EL BOT IA GLOBAL
+     ============================================================ -->
+<section id="integraciones">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Integraciones</span>
+      <h2 class="sec-title">Conectado al <span class="gold-text">mercado global</span></h2>
+      <div class="divider"></div>
+      <p class="sec-sub">El ecosistema se integra con las principales fuentes de datos y exchanges del mercado.</p>
+    </div>
+    <div class="integrations">
+      <div class="integ reveal"><i class="fa-brands fa-ethereum"></i> Etherscan</div>
+      <div class="integ reveal"><i class="fa-solid fa-building-columns"></i> Coinbase Advanced</div>
+      <div class="integ reveal"><i class="fa-solid fa-circle-nodes"></i> OKX</div>
+      <div class="integ reveal"><i class="fa-solid fa-gecko" style="font-family:inherit">🦎</i> CoinGecko</div>
+      <div class="integ reveal"><i class="fa-solid fa-magnifying-glass-chart"></i> DexScreener</div>
+      <div class="integ reveal"><i class="fa-solid fa-chart-area"></i> GeckoTerminal</div>
+      <div class="integ reveal"><i class="fa-solid fa-fire"></i> Mercados Meme</div>
+    </div>
+    <p class="integ-watch reveal">El bot supervisa en tiempo real: <b>liquidez · riesgo · volatilidad · holders</b> y la salud global del ecosistema.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA FINAL
+     ============================================================ -->
+<section class="final-cta">
+  <div class="container reveal">
+    <img src="lion-genesis.png" alt="Lion Genesis" class="cta-emblem">
+    <p class="quote">"El león no sigue al mercado.<br><span class="gold-text">El león crea el movimiento."</span></p>
+    <a href="#tokenomics" class="btn-primary"><i class="fa-solid fa-crown"></i> Unirse al Reino</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     12. FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <span class="mark"><img src="liong-coin.png" alt="$LIONG"></span>
+          <h3>LION <b>GENESIS</b></h3>
+        </div>
+        <p>No es una meme coin. Es el despertar de un imperio digital con poder, inteligencia y propósito. Construyendo legado, no hype.</p>
+        <div class="socials">
+          <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p class="tag-line">#SLIONG · STRENGTH · COMMUNITY · LEGACY</p>
+      </div>
+      <div class="foot-col">
+        <h4>Ecosistema</h4>
+        <ul>
+          <li><a href="#concepto">Concepto</a></li>
+          <li><a href="#tokenomics">Tokenomics</a></li>
+          <li><a href="#niveles">Sistema de Niveles</a></li>
+          <li><a href="#ai">Lion AI</a></li>
+          <li><a href="#lgse">Estabilidad LGSE</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#reserves">Proof of Reserves</a></li>
+          <li><a href="#utilidades">Utilidades</a></li>
+          <li><a href="#integraciones">Integraciones</a></li>
+          <li><a href="#gamificacion">Gamificación</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">Este documento es solo para fines informativos, no constituye asesoría financiera ni oferta de inversión. Los crypto assets son volátiles. Invierte de forma responsable y bajo tu propia investigación (DYOR).</p>
+    <p class="copyright">© 2026 <b>LION GENESIS</b> — Digital Empire. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* --- Navbar: fondo al hacer scroll --- */
+const header = document.getElementById('header');
+window.addEventListener('scroll', ()=> header.classList.toggle('scrolled', window.scrollY > 30));
+
+/* --- Menú hamburguesa móvil --- */
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+
+/* --- Brasas/partículas del hero --- */
+const embers = document.getElementById('embers');
+for(let i=0;i<28;i++){
+  const e = document.createElement('span');
+  e.className = 'ember';
+  e.style.left = Math.random()*100 + '%';
+  e.style.animationDuration = (5 + Math.random()*7) + 's';
+  e.style.animationDelay = (Math.random()*8) + 's';
+  const s = 2 + Math.random()*4;
+  e.style.width = e.style.height = s + 'px';
+  embers.appendChild(e);
+}
+
+/* --- Reveal al hacer scroll + barras tokenomics --- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.classList.add('visible');
+      en.target.querySelectorAll && en.target.querySelectorAll('.dist-fill').forEach(f=>{
+        f.style.width = f.dataset.pct + '%';
+      });
+      io.unobserve(en.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+</script>
+</body>
+</html>
