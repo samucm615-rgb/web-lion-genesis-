@@ -362,6 +362,13 @@ header.scrolled{
 .final-cta .quote{font-family:'Playfair Display';font-style:italic;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--white);max-width:880px;margin:0 auto 30px;line-height:1.4}
 .final-cta .quote .gold-text{font-style:italic}
 
+.foot-email{display:inline-flex;align-items:center;gap:8px;color:var(--gold-2);font-size:.85rem;text-decoration:none;margin:10px 0 6px;transition:color .2s}
+.foot-email:hover{color:var(--gold)}
+.cta-contact{margin-top:22px;font-size:.9rem;color:rgba(245,245,245,.55)}
+.cta-contact a{color:var(--gold-2);text-decoration:none;transition:color .2s}
+.cta-contact a:hover{color:var(--gold)}
+.cta-contact i{margin-right:6px}
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -387,6 +394,19 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
 .disclaimer{border-top:1px solid var(--line);padding-top:26px;font-size:.78rem;color:rgba(245,245,245,.45);font-weight:300;max-width:900px;margin:0 auto;text-align:center}
 .copyright{text-align:center;margin-top:20px;font-family:'Cinzel';font-size:.85rem;color:rgba(245,245,245,.55)}
 .copyright b{color:var(--gold)}
+
+/* ============================================================
+   BANNER FULL-WIDTH
+   ============================================================ */
+.banner-fw{width:100%;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.banner-fw img{width:100%;display:block;object-fit:cover}
+
+/* ============================================================
+   ARQUITECTURA
+   ============================================================ */
+.arch-wrap{border-radius:18px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 0 60px rgba(255,215,0,.12);}
+.arch-wrap img{width:100%;display:block}
 
 /* ============================================================
    PROOF OF RESERVES
@@ -530,6 +550,13 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
 </div>
 
 <!-- ============================================================
+     BANNER FULL-WIDTH
+     ============================================================ -->
+<div class="banner-fw reveal">
+  <img src="banner-movement.jpg" alt="Lion Genesis — More than a meme. It's a movement.">
+</div>
+
+<!-- ============================================================
      2. CONCEPTO Y NARRATIVA
      ============================================================ -->
 <section id="concepto">
@@ -583,31 +610,31 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
 
     <div class="token-grid">
       <div class="token-supply reveal">
-        <img src="liong-coin.png" alt="Moneda $LIONG" class="token-coin">
+        <img src="liong-coin-hd.jpg" alt="Moneda $LIONG" class="token-coin">
         <div class="big gold-text">1.000.000.000</div>
         <div class="lbl">$LIONG · Supply Total</div>
         <div class="token-note"><i class="fa-solid fa-lock"></i> Liquidez inicial bloqueada y auditada</div>
       </div>
       <div class="dist-list reveal">
         <div class="dist-row">
-          <div class="dist-top"><span class="dist-name">Liquidez inicial</span><span class="dist-pct">40%</span></div>
+          <div class="dist-top"><span class="dist-name">Official Liquidity Pool</span><span class="dist-pct">40%</span></div>
           <div class="dist-bar"><div class="dist-fill" data-pct="40"></div></div>
         </div>
         <div class="dist-row">
-          <div class="dist-top"><span class="dist-name">Comunidad / Airdrops</span><span class="dist-pct">20%</span></div>
-          <div class="dist-bar"><div class="dist-fill" data-pct="20"></div></div>
+          <div class="dist-top"><span class="dist-name">Founder Strategic Reserve (DFA)</span><span class="dist-pct">25%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="25"></div></div>
         </div>
         <div class="dist-row">
-          <div class="dist-top"><span class="dist-name">Marketing</span><span class="dist-pct">15%</span></div>
+          <div class="dist-top"><span class="dist-name">Ecosystem Treasury Reserve</span><span class="dist-pct">17.50%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="17.5"></div></div>
+        </div>
+        <div class="dist-row">
+          <div class="dist-top"><span class="dist-name">Strategic Investor Vesting</span><span class="dist-pct">15%</span></div>
           <div class="dist-bar"><div class="dist-fill" data-pct="15"></div></div>
         </div>
         <div class="dist-row">
-          <div class="dist-top"><span class="dist-name">Tesorería del ecosistema</span><span class="dist-pct">15%</span></div>
-          <div class="dist-bar"><div class="dist-fill" data-pct="15"></div></div>
-        </div>
-        <div class="dist-row">
-          <div class="dist-top"><span class="dist-name">Equipo fundador</span><span class="dist-pct">10%</span></div>
-          <div class="dist-bar"><div class="dist-fill" data-pct="10"></div></div>
+          <div class="dist-top"><span class="dist-name">Marketing · Partnerships · Ecosystem Growth</span><span class="dist-pct">2.50%</span></div>
+          <div class="dist-bar"><div class="dist-fill" data-pct="2.5"></div></div>
         </div>
       </div>
     </div>
@@ -705,6 +732,23 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
         <div class="ai-feat"><i class="fa-brands fa-telegram"></i><div><b>Asistente en Telegram</b><p>Responde a la comunidad y atiende a los holders en tiempo real.</p></div></div>
         <div class="ai-feat"><i class="fa-solid fa-chart-line"></i><div><b>Análisis de comunidad</b><p>Mide actividad, detecta tendencias y ayuda a crear campañas efectivas.</p></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ARQUITECTURA GLOBAL DEL ECOSISTEMA
+     ============================================================ -->
+<section id="arquitectura" style="background:rgba(8,6,2,.4)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Bot IA · Arquitectura</span>
+      <h2 class="sec-title">Arquitectura Global del <span class="gold-text">Ecosistema</span></h2>
+      <div class="divider"></div>
+      <p class="sec-sub">Mapa completo del Bot IA, reservas, integraciones y monitoreo en tiempo real.</p>
+    </div>
+    <div class="arch-wrap reveal">
+      <img src="ecosystem-arch.jpg" alt="Arquitectura Global del Ecosistema LION GENESIS">
     </div>
   </div>
 </section>
@@ -885,6 +929,7 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
     <img src="lion-genesis.png" alt="Lion Genesis" class="cta-emblem">
     <p class="quote">"El león no sigue al mercado.<br><span class="gold-text">El león crea el movimiento."</span></p>
     <a href="#tokenomics" class="btn-primary"><i class="fa-solid fa-crown"></i> Unirse al Reino</a>
+    <p class="cta-contact"><i class="fa-solid fa-envelope"></i> <a href="mailto:lion@lionmemeecosystem.com">lion@lionmemeecosystem.com</a></p>
   </div>
 </section>
 
@@ -903,6 +948,7 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
         <div class="socials">
           <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
+        <a href="mailto:lion@lionmemeecosystem.com" class="foot-email"><i class="fa-solid fa-envelope"></i> lion@lionmemeecosystem.com</a>
         <p class="tag-line">#SLIONG · STRENGTH · COMMUNITY · LEGACY</p>
       </div>
       <div class="foot-col">
