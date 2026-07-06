@@ -358,9 +358,12 @@ header.scrolled{
    CTA FINAL
    ============================================================ */
 .final-cta{text-align:center;padding:120px 0}
-.cta-emblem{width:min(260px,60%);margin:0 auto 30px;border-radius:18px;filter:drop-shadow(0 0 40px rgba(255,215,0,.35));animation:float 6s ease-in-out infinite}
+.cta-emblem{width:min(520px,88%);margin:0 auto 36px;border-radius:22px;filter:drop-shadow(0 0 60px rgba(255,215,0,.5)) drop-shadow(0 0 120px rgba(255,215,0,.2));animation:float 6s ease-in-out infinite}
 .final-cta .quote{font-family:'Playfair Display';font-style:italic;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--white);max-width:880px;margin:0 auto 30px;line-height:1.4}
 .final-cta .quote .gold-text{font-style:italic}
+
+.promo-visual{max-width:700px;margin:0 auto 0;padding:60px 20px 0;text-align:center}
+.promo-visual img{width:100%;border-radius:24px;box-shadow:0 0 80px rgba(255,215,0,.2);display:block}
 
 .foot-email{display:inline-flex;align-items:center;gap:8px;color:var(--gold-2);font-size:.85rem;text-decoration:none;margin:10px 0 6px;transition:color .2s}
 .foot-email:hover{color:var(--gold)}
@@ -396,10 +399,24 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
 .copyright b{color:var(--gold)}
 
 /* ============================================================
-   BANNER FULL-WIDTH
+   BANNER SECTION
    ============================================================ */
-.banner-fw{width:100%;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.banner-fw img{width:100%;display:block;object-fit:cover}
+.banner-section{padding:70px 0}
+.banner-inner{
+  border-radius:20px;overflow:hidden;
+  border:1px solid rgba(212,175,55,.45);
+  box-shadow:0 0 60px rgba(255,215,0,.15),0 0 140px rgba(255,215,0,.06),inset 0 0 40px rgba(0,0,0,.4);
+  position:relative;
+}
+.banner-inner img{width:100%;display:block}
+.banner-tag{
+  text-align:center;font-family:'Inter';font-size:.72rem;letter-spacing:.22em;
+  font-weight:700;color:var(--gold-2);padding:14px 20px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,55,.08),transparent);
+  border-bottom:1px solid rgba(212,175,55,.2);
+  display:flex;align-items:center;justify-content:center;gap:14px;
+}
+.banner-tag span{display:block;width:40px;height:1px;background:var(--grad-gold)}
 
 /* ============================================================
    ARQUITECTURA
@@ -552,9 +569,14 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
 <!-- ============================================================
      BANNER FULL-WIDTH
      ============================================================ -->
-<div class="banner-fw reveal">
-  <img src="banner-movement.jpg" alt="Lion Genesis — More than a meme. It's a movement.">
-</div>
+<section class="banner-section">
+  <div class="container">
+    <div class="banner-inner reveal">
+      <div class="banner-tag"><span></span> $LIONG · MORE THAN A MEME. IT'S A MOVEMENT. <span></span></div>
+      <img src="banner-movement.jpg" alt="Lion Genesis — More than a meme. It's a movement.">
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      2. CONCEPTO Y NARRATIVA
@@ -926,7 +948,7 @@ footer{border-top:1px solid var(--line);background:linear-gradient(180deg,#000,#
      ============================================================ -->
 <section class="final-cta">
   <div class="container reveal">
-    <img src="lion-genesis.png" alt="Lion Genesis" class="cta-emblem">
+    <img src="liong-promo.jpg" alt="Lion Genesis" class="cta-emblem">
     <p class="quote">"El león no sigue al mercado.<br><span class="gold-text">El león crea el movimiento."</span></p>
     <a href="#tokenomics" class="btn-primary"><i class="fa-solid fa-crown"></i> Unirse al Reino</a>
     <p class="cta-contact"><i class="fa-solid fa-envelope"></i> <a href="mailto:lion@lionmemeecosystem.com">lion@lionmemeecosystem.com</a></p>
